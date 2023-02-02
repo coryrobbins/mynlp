@@ -19,6 +19,7 @@ def remove_punctuation(text):
 
 def clean_text(text: str) -> str:
     text = space_after_punc(text)
+    text = remove_punctuation(text)
     text = text.lower() # Convert to lowercase
     text = re.sub(r'\r+|\n+||\t', '', regex=True) # removes line breaks, indentions etc. 
     text = re.sub(r'XYZ', ' ', text) #removes XYZ from anonymization
